@@ -17,6 +17,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from stocks import views as stock_views
+
 urlpatterns = [
+	url(r'^sell/',
+		stock_views.SellingView.as_view(),
+		name='selling'),
     url(r'^admin/', admin.site.urls),
 ]
